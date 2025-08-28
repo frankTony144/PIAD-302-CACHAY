@@ -27,7 +27,7 @@ SELECT * FROM Customers
 WHERE Address LIKE '%AV%'
 
 SELECT * FROM Customers
-WHERE Country != 'Brazil'
+WHERE Country NOT LIKE 'Brazil'
 
 SELECT * FROM Customers
 WHERE Region IS NOT NULL AND fax IS NOT NULL
@@ -49,15 +49,18 @@ contar todas las "orders" agrupando por el shipCity"
 sumar todos los "UniPrice" de los "Productos" agrupando por el "CategoryId"
 
 */
-SELECT COUNT(*) 'Cantidad' FROM Orders
+SELECT ShipCountry, COUNT(*) 'Cantidad' 
+FROM Orders
 GROUP BY ShipCountry
-ORDER BY COUNT(*) DESC
 
-SELECT COUNT(*) 'Cantidad' FROM Orders
+
+SELECT ShipCity, COUNT(*) 'Cantidad'
+FROM Orders
 GROUP BY ShipCity
-ORDER BY COUNT(*) DESC
 
-SELECT SUM(UnitPrice) FROM Products;
+
+SELECT CategoryId, SUM(UnitPrice) 'Total_Precio'
+FROM Products;
 GROUP BY CategoryId
 
 
