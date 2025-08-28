@@ -33,17 +33,6 @@ SELECT * FROM Customers
 WHERE Region IS NOT NULL AND fax IS NOT NULL
 
 
-
-
-SELECT City, COUNT(*) 'Cantidad' FROM Customers
-GROUP BY City
-ORDER BY COUNT(*) DESC
-
-
-SELECT City, COUNT(*) 'Cantidad' FROM Customers
-GROUP BY City
-ORDER BY COUNT(*) DESC
-
 /*contar todas las "orders" agrupando por el "ShipCountry"
 contar todas las "orders" agrupando por el shipCity"
 sumar todos los "UniPrice" de los "Productos" agrupando por el "CategoryId"
@@ -71,4 +60,4 @@ SELECT AVG(UnitPrice)FROM Products; --Promedio de los precios unitarios
 
 SELECT * FROM Orders
 
-g
+
