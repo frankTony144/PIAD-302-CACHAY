@@ -1,0 +1,11 @@
+SELECT c.CompanyName, SUM(r.UnitPrice * r.Quantity)'total' FROM orders o
+INNER JOIN Customers c ON o.CustomerID = c.CustomerID
+INNER JOIN [Order Details] r ON o.OrderID = r.OrderID
+GROUP BY c.CompanyName
+
+
+SELECT * FROM Employees
+
+SELECT e.FirstName, e.LastName, COUNT(o.OrderID) AS TotalOrders FROM orders o
+INNER JOIN Employees e ON o.EmployeeID = e.EmployeeID
+GROUP BY e.FirstName, e.LastName
